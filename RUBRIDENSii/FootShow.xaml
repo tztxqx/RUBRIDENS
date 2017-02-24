@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="RUBRIDENSii.FootShow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="557" d:DesignWidth="807" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView Grid.Column="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <TreeViewItem Header="左脚（mmHg）" IsExpanded="True" Width="174">
+                    <CheckBox x:Name="checkBox1" Content="第一跖骨" Click="checkBox1_Click"  />
+                    <CheckBox x:Name="checkBox2" Content="第三跖骨" Click="checkBox2_Click" />
+                    <CheckBox x:Name="checkBox3" Content="第五跖骨" Click="checkBox3_Click" />
+                    <CheckBox x:Name="checkBox4" Content="跟骨" Click="checkBox4_Click" />
+                </TreeViewItem>
+                <TreeViewItem Header="右脚（mmHg）" IsExpanded="True" Width="178">
+                    <CheckBox x:Name="checkBox11" Content="第一跖骨" Click="checkBox11_Click" />
+                    <CheckBox x:Name="checkBox22" Content="第三跖骨" Click="checkBox22_Click" />
+                    <CheckBox x:Name="checkBox33" Content="第五跖骨" Click="checkBox33_Click" />
+                    <CheckBox x:Name="checkBox44" Content="跟骨" Click="checkBox44_Click" />
+                </TreeViewItem>
+            </TreeView>
+        </Grid>
+        <Grid  Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="image/双脚.jpg"/>
+                </Grid.Background>
+                <Border CornerRadius="1" BorderThickness="1" BorderBrush="#FF88B645">
+                    <Image x:Name="HeatmapImage" Stretch="Fill" />
+                </Border>
+            </Grid>
+            <Ellipse x:Name="epoint1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Margin="219,103,0,0" Stroke="White" VerticalAlignment="Top" Width="59"/>
+            <Ellipse x:Name="epoint2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Margin="126,103,0,0" Stroke="White" VerticalAlignment="Top" Width="60"/>
+            <Ellipse x:Name="epoint3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Margin="31,103,0,0" Stroke="White" VerticalAlignment="Top" Width="63" />
+            <Ellipse x:Name="epoint4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="75" Margin="108,342,0,0" Stroke="White" VerticalAlignment="Top" Width="105"/>
+            <Ellipse x:Name="epoint5" Fill="#FFF4F4F5" Height="50" Margin="364,103,222.6,0" Stroke="White" VerticalAlignment="Top"/>
+            <Ellipse x:Name="epoint6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Margin="458,103,0,0" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <Ellipse x:Name="epoint7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="50" Margin="548,103,0,0" Stroke="White" VerticalAlignment="Top" Width="61"/>
+            <Ellipse x:Name="epoint8" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="69" Margin="439,348,0,0" Stroke="White" VerticalAlignment="Top" Width="87"/>
+            <Grid Grid.Row="1">
+                <Slider x:Name="timeSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="646" MouseMove="timeSlider_MouseMove" />
+            </Grid>
+            <Grid Grid.Row="2" >
+                <RichTextBox x:Name="patientinfoLabel"  Margin="0,0,113,0" FontSize="18" IsReadOnly="True"/>
+
+                <Button x:Name="playButton" Content="播放" HorizontalAlignment="Left" Height="41" Margin="538,0,0,0" VerticalAlignment="Top" Width="108" Click="playButton_Click" FontSize="20"/>
+                <Button x:Name="printButton" Content="打印" HorizontalAlignment="Left"  Width="108" Height="47" VerticalAlignment="Top" Margin="538,41,0,0" Click="printButton_Click" FontSize="20"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
